@@ -1,0 +1,127 @@
+
+
+\documentclass[12pt,letterpaper]{article}	
+\UseRawInputEncoding
+% PERSONAL PACKAGES [add below] 
+\usepackage{expex,marvosym,tabularray,xcolor}
+
+%%% LSA LAYOUT AND PACKAGES
+\usepackage{times} %obsolete, but works for the font and style
+\usepackage{tipa}
+\usepackage{natbib}
+ 	\setcitestyle{semicolon,aysep={},yysep={,},notesep={:}}
+ 	%see below for instructions on natbib bibliography
+
+\usepackage{lipsum} % this and the following package and the settings beneath them are for maintaining indentation and still having ragged-right alignmnent
+\usepackage{ragged2e}
+\setlength\RaggedRightParindent{0.3in}
+\RaggedRight
+
+\usepackage{scrextend} % this package and the following settings are for the footnote formatting
+\deffootnote[.5em]{0em}{1em}{\textsuperscript{\thefootnotemark}\,}
+
+\newcounter{savefootnote}   % these settings allow the use of an asterisk as a footnote label (for the author line below the title.
+\newcounter{symfootnote}
+\newcommand{\symfootnote}[1]{%
+   \setcounter{savefootnote}{\value{footnote}}%
+   \setcounter{footnote}{\value{symfootnote}}%
+   \ifnum\value{footnote}>8\setcounter{footnote}{0}\fi%
+   \let\oldthefootnote=\thefootnote%
+   \renewcommand{\thefootnote}{\fnsymbol{footnote}}%
+   \footnote{#1}%
+   \let\thefootnote=\oldthefootnote%
+   \setcounter{symfootnote}{\value{footnote}}%
+   \setcounter{footnote}{\value{savefootnote}}%
+}
+
+\usepackage[labelsep=period]{caption}
+
+\usepackage[margin=1.0in]{geometry}
+\usepackage[compact]{titlesec}
+	\titleformat{\section}[runin]{\normalfont\bfseries}{\thesection.}{.5em}{}[.]
+	\titleformat{\subsection}[runin]{\normalfont\scshape}{\thesubsection.}{.5em}{}[.]
+	\titleformat{\subsubsection}[runin]{\normalfont\scshape}{\thesubsubsection.}{.5em}{}[.]
+%\usepackage[usenames,dvipsnames]{color}	
+\usepackage[colorlinks,allcolors={black},urlcolor={blue}]{hyperref} 
+
+
+\renewenvironment{abstract}{%
+\noindent\begin{minipage}{1\textwidth}
+\setlength{\leftskip}{0.4in}
+\setlength{\rightskip}{0.4in}
+\textbf{Abstract.}}
+{\end{minipage}}
+
+% keywords environment
+\newenvironment{keywords}{%
+\vspace{.5em}
+\noindent\begin{minipage}{1\textwidth}
+\setlength{\leftskip}{0.4in}
+\setlength{\rightskip}{0.4in}
+\textbf{Keywords.}}
+{\end{minipage}}
+
+%%% MAIN DOCUMENT
+\begin{document} 
+
+
+
+%title and author lines
+\begin{center}
+\normalfont\bfseries
+Implementing an Intelligent WareHouse Management System
+\vskip .5em
+\normalfont
+
+\vskip .5em
+\end{center}
+
+\section{Summary}
+
+The supply chain is the process of delivering a product or service from start to finish and aims to improve coordination and linkage between all processes such as suppliers, customers, and the organization.\newline
+Warehousing is a key function of supply chain management and traditionally, managing inventory focused on inspecting processes to improve warehouse performance without the use of information technology (IT) tools.\newline
+However, with an increasing number of items to be processed in a warehouse, traditional methods are no longer adequate and the use of IT, such as Warehouse Management Systems (WMS) and Enterprise Resource Planning (ERP) systems, has become necessary.\newline
+Recently, new technologies such as the Internet of Things (IoT) have been introduced to meet the changing market requirements and challenges. IoT is used to gather and share information, manage supply chains efficiently and convert it to a smart one, for example, by tracking and monitoring products, demand forecasting, inventory management, and getting real-time data about every process to prevent the bullwhip effect\newline
+It describes various studies on the impact of adopting a Warehouse Management System (WMS) on overall business performance. These studies have found that WMS, when integrated with technologies like wireless barcodes, RFID, and IoT, can help in reducing costs, making management more efficient, making processes more flexible, and making lead-time delivery shorter. Additionally, it helps in increasing customer satisfaction, improving competitiveness and reducing inventory investment.\newline The integration of WMS with other systems such as ERP and SaaS can bring the most profit to the enterprise. These studies also found that RFID in downstream stages result in more benefits and efficiency compared to when utilizing it in the upstream stages.
+Researchers have been exploring the possibility of using IoT technology in several fields, including Supply Chain Management (SCM).\newline Studies in the field of agricultural supply chains have proposed IoT-based models using RFID to solve the problem of imperfect information and bullwhip effect, increasing supply chain efficiency and improving the authenticity and quality of products. \newline Other studies have proposed IoT-based real-time production logistics synchronization systems, smart warehouse management systems, inventory management systems and a negotiation protocol for collaborative warehouse order fulfillment. \newline These systems aim to improve warehouse performance, inventory tracking, and overall supply chain efficiency. Additionally, frameworks have been proposed to study the impact of IoT in SCM and how it can improve Supply Chain Innovation (SCI) through data integration between resources, processes and activities
+Researchers have proposed different architectures for IoT depending on the application. \newline  Pacheco and Hariri  proposed an architecture of IoT consisting of four layers: the devices layer captures information from physical objects using sensors and actuators, the network layer provides connectivity using various technologies and protocols, the services layer provides computational power as a cloud to monitor and control data flow, and the application layer provides interaction methods for users. \newline Farahani proposed four basic layers for IoT infrastructure, each with its own security issues. \newline Lin et a  and Mahmoud et al  proposed an architecture of IoT consisting of three layers: the perception layer connects things into the IoT network and collects, measures, and processes data, the network layer receives and transmits information, and the application layer receives data to provide required services
+
+IoT can have a significant role in improving various functions of Supply Chain Management (SCM) such as inventory, routing, distribution, location, purchasing, production and marketing. \newline  IoT and connected devices can help in managing transportation flows in the supply chain by providing real-time information, establishing strong collaboration between carriers, shippers and customers, and making service more flexible and agile. IoT can also improve customer service by creating opportunities for competitiveness, and enhance relationship with customers through real-time communications.\newline  In warehousing, IoT can make a warehouse more intelligent by providing strong collaboration between products and shelves and supporting decentralized management and solving security and authenticity problems. IoT data can be used in forecasting models to make more accurate demand forecast and respond proactively to market dynamics. In manufacturing, IoT can improve visibility at each stage of the production process, efficiency and scalability, accurate breakdown prediction, ingredient waste reduction, and performance improvement. \newline  Smart devices can also help in managing inventory correctly by providing and monitoring real-time information, thus improving visibility of demand, preventing stock-out and inventory shrinkage.
+
+In summary, the proposed framework for implementing IoT in warehousing operations aims to improve warehouse performance by eliminating manual interferences and monitoring several processes in real-time. \newline  IoT can make warehouses more intelligent by connecting everything and allowing for the analysis of data captured from these connections to support decisions and improve overall performance. \newline  The framework includes using RFID tags on products for inventory tracking and real-time visibility, using readers and sensors on forklifts for order picking and confirmation, and using sensors for monitoring HVAC systems and warehouse safety. \newline  The framework also includes transmitting data to a WMS for processing and converting it into useful information and actions. Adopting this framework may face challenges such as data privacy and security concerns, cost, and integration with existing systems
+
+it can positively impact the overall supply chain performance. However, implementing IoT in a warehouse may face several challenges such as cost, security, and lack of standardization. \newline Despite these challenges, the benefits of using IoT in WMS outweigh the challenges and can lead to increased efficiency, cost reduction, and improved customer satisfaction. Overall, IoT can be a valuable tool for building a smart WMS that improves the performance of the whole supply chain.
+\section{Ideas from the author}
+
+\newline 
+The key contributions from the author in this paper are:
+
+1.Summarizing the basic building blocks of IoT and its layers, and the potential impact of using it in the supply chain.\newline
+2.Proposing a framework for implementing IoT in warehousing operations to improve the performance of the warehouse, order fulfillment process, storage process, picking process and inventory accuracy \newline
+3.Providing a flowchart for the proposed framework and explaining how it can help in providing real-time visibility of everything in the warehouse, increasing speed and efficiency, and preventing inventory shortage and counterfeiting. \newline
+4.Giving an effective roadmap for enterprises to improve their warehouses operations using IoT technology \newline
+
+
+
+ \section{My Views \newline} \newline
+    1.The paper discusses the potential impact of using IoT in warehouse management systems (WMS) and how it can help in providing real-time visibility of everything in the warehouse, increasing speed and efficiency, and preventing inventory shortage and counterfeiting. The authors propose a framework for implementing IoT in warehousing operations, which includes using RFID technology to track and monitor products as they enter and exit the warehouse, as well as sensors to monitor the warehouse environment and ensure the safety and quality of products.\newline
+    2.The framework also suggests using IoT to improve order fulfillment, storage, and inventory accuracy by providing real-time data and reducing the need for manual operations. \newline
+    3. The authors point out that IoT can also improve the performance of the whole supply chain by reducing costs and increasing efficiency. They also mention that there are challenges to implementing IoT in the warehouse, such as security and privacy concerns, but these can be overcome with proper planning and execution. \newline
+    4. Overall, the paper provides a useful overview of the potential benefits and challenges of using IoT in WMS, and the proposed framework can serve as a guide for enterprises looking to improve their warehouse operations. \newline
+\section{Agreements}
+    1.The paper provides a good overview of the potential impact of using IoT in supply chain management, specifically in the context of warehouse management systems (WMS).\newline
+    2.It explains how IoT technology can be used to improve various functions of WMS such as inventory management, routing and distribution, location, purchasing, production and marketing. The paper also describes how IoT can help in providing real-time visibility of everything in the warehouse, increasing speed and efficiency, and preventing inventory shortage and counterfeiting. \newline 
+    3.It also describes the benefits of using IoT in warehousing operations such as reducing manual interferences, monitoring several processes in real-time and making the warehouse more intelligent. It also proposes a framework for implementing IoT in warehouse operations, which can be used as a guideline for enterprises to improve their warehouse performance. Additionally, it describes the basic building blocks of IoT and its layers which is helpful for readers to understand the concept better
+\section{Disagreements}
+    1.It is important to note that the proposed framework is based on the assumption that IoT technology is fully adopted and implemented, and that the implementation of this technology may have challenges that need to be addressed. \newline
+    2. Overall, the paper presents a promising approach for using IoT in supply chain management and specifically in WMS, but it's important to keep in mind the potential challenges that may arise.\newline
+
+
+
+
+
+
+\bibliographystyle{sp-lsa.bst}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{https://doi.org/#1}} %modified from sp.cls
+\bibliography{lsa} % your bib file
+\end{document}
