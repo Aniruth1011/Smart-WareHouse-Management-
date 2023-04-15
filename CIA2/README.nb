@@ -1,0 +1,2 @@
+This folder is the contents of CIA 2 . 
+It has a Time Series Analysis on the different levels of chemicals present in the environment , with Arima Model implemented
